@@ -7,7 +7,7 @@ function computerChoice() {
 
 function play (playerChoice, computerChoice) {
     let choice = playerChoice.toLowerCase()
-    switch(playerChoice) {
+    switch(choice) {
         case "rock":
             if(computerChoice == "scissor") {
                return "You win! Rock beats scissor."
@@ -58,11 +58,12 @@ function play (playerChoice, computerChoice) {
 }
 
 for(let i=0; i < 5;i ++) {
-let compChoice = computerChoice()
-let player = "scissor"
-console.log("Computer chose: " + compChoice)
-console.log("Player chose: " + player)
-console.log(play(player, compChoice))
-console.log("______________________________________")
+
+    let playerChoice = prompt("Enter your choice: paper, rock or scissor.")
+    let compChoice = computerChoice()
+    console.log("Computer chose: " + compChoice)
+    console.log("Player chose: " + playerChoice)
+    console.log(play(playerChoice, compChoice))
+    console.log("______________________________________")
 }
 
