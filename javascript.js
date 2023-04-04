@@ -57,5 +57,12 @@ function play (playerChoice, computerChoice) {
     }
 }
 
-
+for(let i=0; i < 5;i ++) {
+let compChoice = computerChoice()
+let player = "scissor"
+console.log("Computer chose: " + compChoice)
+console.log("Player chose: " + player)
+console.log(play(player, compChoice))
+console.log("______________________________________")
+}
 
