@@ -12,11 +12,31 @@ function computerChoice() {
 
 const header= document.querySelector('#score');
 const score = document.createElement('h1');
+score.textContent = playerScore;
 header.appendChild(score);
 
+// Computer score
+const computerHeader = document.querySelector('#computer-score')
+const computerScoreHeader = document.createElement('h1');
+computerScoreHeader.textContent = computerScore;
+computerHeader.appendChild(computerScoreHeader);
 
+
+const body = document.querySelector('body');
+const winnerDiv = document.createElement('div');
+body.appendChild(winnerDiv);
+
+function createWinnerDiv() {
+    if(playerScore == 5) {
+        winnerDiv.textContent = "You Win!!! AWESOME!!!";
+    } else if(computerScore == 5) {
+        winnerDiv.textContent = "Aw shucks!!! You lost...";
+    }
+}
 function updateScore() {
     score.textContent = playerScore;
+    computerScoreHeader.textContent = computerScore;
+
 }
 
 function play (playerChoice, computerChoice) {
@@ -81,7 +101,7 @@ function play (playerChoice, computerChoice) {
     }
 
     updateScore();
-    
+    createWinnerDiv()
     
 }
 

@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: flex;
+    /* justify-content: center;*/
+    gap: 200px; 
+}
+.choices {
+    display: flex;
+    gap: 24px;
+    /* justify-content: center;
+    align-items: center; */
+}
+#score {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+#computer-score {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
