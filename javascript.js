@@ -69,27 +69,12 @@ function play (playerChoice, computerChoice) {
         
     }
 }
+const buttons = document.querySelectorAll('button')
+buttons.forEach(button => {
+    button.addEventListener('click', function (e){
+        console.log(button.id)
+        console.log(play(button.id, computerChoice()))
+    })
+})
 
-for(let i=0; i < 5;i ++) {
-
-    let playerChoice = prompt("Enter your choice: paper, rock or scissor.")
-    let compChoice = computerChoice()
-    console.log("Computer chose: " + compChoice)
-    console.log("Player chose: " + playerChoice)
-    console.log(play(playerChoice, compChoice))
-    console.log("Your score: " + playerScore)
-    console.log("Computer score: " + computerScore)
-    console.log("______________________________________")
-    if(i==4) {
-        if(playerScore > computerScore) {
-            console.log("You won " + playerScore + "and computer won " + computerScore)
-        } else if (playerScore < computerScore) {
-            console.log("You lost. Computer won" + computerScore+ "and you won " + playerScore)
-
-        } else {
-            console.log("There is a draw")
-
-        }
-    }
-}
 
