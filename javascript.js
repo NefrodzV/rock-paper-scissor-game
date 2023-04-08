@@ -3,9 +3,20 @@ let computerScore =0;
 let playerScore =0;
 
 
+
+
 function computerChoice() {
     let choice = choices[Math.floor(Math.random() * choices.length)]
     return choice
+}
+
+const header= document.querySelector('#score');
+const score = document.createElement('h1');
+header.appendChild(score);
+
+
+function updateScore() {
+    score.textContent = playerScore;
 }
 
 function play (playerChoice, computerChoice) {
@@ -14,34 +25,34 @@ function play (playerChoice, computerChoice) {
         case "rock":
             if(computerChoice == "scissor") {
                 playerScore++
-                return "You win! Rock beats scissor."
+                console.log("You win! Rock beats scissor.")
             }
 
             if(computerChoice == "paper") {
                 computerScore++
-                return "You lose! Paper beats rock."
+                console.log( "You lose! Paper beats rock.")
                 
             }
 
             if (computerChoice == "rock") {
-                return "Draw!"
+                console.log("Draw!")
             }
         break;
 
         case "paper":
             if(computerChoice == "scissor") {
                 computerScore++
-                return "You lose! Scissor beats paper."
+                console.log("You lose! Scissor beats paper.")
                 
             }
  
             if(computerChoice == "paper") {
-                return "Draw!"
+                console.log("Draw!")
             }
  
             if (computerChoice == "rock") {
                 playerScore++
-                return "You win! Paper beats rock."
+                console.log("You win! Paper beats rock.")
                 
             }
 
@@ -49,18 +60,18 @@ function play (playerChoice, computerChoice) {
 
         case "scissor":
             if(computerChoice == "scissor") {
-                return "Draw!"
+                console.log("Draw!")
             }
  
             if(computerChoice == "paper") {
                 playerScore++
-                return "You win! Scissor beats paper."
+                console.log("You win! Scissor beats paper.")
 
             }
  
             if (computerChoice == "rock") {
                 computerScore++
-                return "You lose! Rock beats scissor."
+                console.log( "You lose! Rock beats scissor.")
             }
         break;
 
@@ -68,11 +79,19 @@ function play (playerChoice, computerChoice) {
             return "Please make a appropiate selection! Type rock, paper or scissor"
         
     }
+
+    updateScore();
+    
+    
 }
+
+
+
+
 const buttons = document.querySelectorAll('button')
 buttons.forEach(button => {
     button.addEventListener('click', function (e){
-        console.log(button.id)
+        // console.log(button.id)
         console.log(play(button.id, computerChoice()))
     })
 })
